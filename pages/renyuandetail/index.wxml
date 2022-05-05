@@ -1,0 +1,12 @@
+<view class="view-body">
+    <van-cell-group title="基本信息">
+        <van-cell title="姓名" value="{{data.name||'未知'}}"></van-cell>
+        <van-cell title="校园卡号" value="{{data.campusCard||'暂无'}}"></van-cell>
+        <van-cell title="联系电话" value="{{data.phone||'暂无'}}"></van-cell>
+        <van-cell title="所属单位" value="{{data.organ&&data.organ.name||'暂无'}}"></van-cell>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onSubmit" type="info">{{data.unitManagerSpecialExclusion>0?'正在审核中...':type==0?'设为红名单':'解除红名单'}}</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

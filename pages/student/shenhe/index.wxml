@@ -1,0 +1,11 @@
+<van-tabs color="#1890ff">
+    <van-tab title="待审核">
+        <audit-list type="{{0}}"></audit-list>
+    </van-tab>
+    <van-tab title="已通过">
+        <audit-list type="{{1}}"></audit-list>
+    </van-tab>
+    <van-tab title="未通过">
+        <audit-list type="{{9}}"></audit-list>
+    </van-tab>
+</van-tabs>

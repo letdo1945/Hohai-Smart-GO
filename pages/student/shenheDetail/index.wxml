@@ -1,0 +1,32 @@
+<view class="view-body" style="{{type==0?'':'height:100%'}}">
+    <van-cell-group title="访客列表" wx:if="{{data.type==1}}">
+        <view class="list-body">
+            <view class="card" wx:for="{{data.universityVisitorItem}}" wx:key="index">
+                <view class="title">
+                    <van-icon customStyle="position: relative;top: 8rpx;margin-right: 12rpx;" name="manager"></van-icon>{{item.visitorName}} </view>
+                <view class="card-num"> 证件号码：{{item.visitorCard}} </view>
+                <view class="phone-num"> 联系方式：{{item.visitorPhone||'未填写'}} </view>
+            </view>
+        </view>
+    </van-cell-group>
+    <van-cell-group title="基本内容">
+        <van-cell title="申请时间" value="{{data.createTime}}"></van-cell>
+        <van-cell title="状态">
+            <view slot="right-icon">
+                <view style="color: {{data.status[0].color}}">{{data.status[0].label}}</view>
+            </view>
+        </van-cell>
+        <van-cell title="申请人" value="{{data.applicantName}}"></van-cell>
+        <van-cell title="申请人单位" value="{{data.universityName}}"></van-cell>
+        <van-cell title="开始时间" value="{{data.startTime}}"></van-cell>
+        <van-cell title="终止时间" value="{{data.endTime}}"></van-cell>
+        <van-cell title="每天进出次数" value="{{data.maxTimes}}"></van-cell>
+        <van-cell border="{{false}}" title="进出事由"></van-cell>
+        <view class="textarea">{{data.visitorReason}}</view>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button bind:click="btn_act" customStyle="width:50%" data-value="{{0}}" type="primary" wx:if="{{type==0}}">通过</van-button>
+    <van-button bind:click="btn_act" customStyle="width:50%" data-value="{{9}}" type="danger" wx:if="{{type==0}}">拒绝</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

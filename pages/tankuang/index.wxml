@@ -1,0 +1,10 @@
+<view class="body">
+    <van-cell-group title="基本信息">
+        <van-field bindinput="onInput" data-name="phone" inputAlign="right" label="电话" placeholder="请填写联系方式" value="{{phone}}"></van-field>
+        <van-field bindinput="onInput" data-name="idCard" inputAlign="right" label="身份证号码" placeholder="请填写身份证号码" value="{{idCard}}"></van-field>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onSubmit" type="info">提交</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

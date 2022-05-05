@@ -1,0 +1,12 @@
+<view class="body">
+    <van-cell-group title="基本信息">
+        <van-field bindinput="onInput" data-name="name" inputAlign="right" label="姓名" value="{{userInfo.name}}"></van-field>
+        <van-field bindinput="onInput" data-name="phone" inputAlign="right" label="电话" value="{{userInfo.phone}}"></van-field>
+        <van-field data-name="idCard" inputAlign="right" label="校园卡号" value="{{userInfo.campusCard?userInfo.campusCard:'暂无'}}"></van-field>
+        <van-field bindinput="onInput" data-name="address" inputAlign="right" label="地址" placeholder="请输入住址" value="{{address}}"></van-field>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onSubmit" type="info">提交</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

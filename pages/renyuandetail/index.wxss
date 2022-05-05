@@ -1,0 +1,26 @@
+page {
+    background: #f7f8fa;
+    height: 100vh;
+}
+
+.view-body {
+    height: calc(100vh - 44px);
+    overflow: auto;
+}
+
+.btn-list,.view-body {
+    position: absolute;
+    width: 100%;
+}
+
+.btn-list {
+    bottom: 0;
+}
+
+.mask {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}

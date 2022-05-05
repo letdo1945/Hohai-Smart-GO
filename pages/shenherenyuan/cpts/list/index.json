@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+        "van-scroll": "/cpts/scroll/index",
+        "van-tag": "/miniprogram_npm/@vant/weapp/tag/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-checkbox": "/miniprogram_npm/@vant/weapp/checkbox/index"
+    }
+}

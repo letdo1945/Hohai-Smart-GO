@@ -1,0 +1,45 @@
+<view wx:if="{{userInfo.type==4}}">
+    <view class="view-body">
+        <van-cell-group title="basic content">
+            <van-cell title="applicant" value="{{userInfo.name}}"></van-cell>
+            <van-cell title="审核人" value="{{userInfo.unitManagerName}}" wx:if="{{userInfo.verifier==10}}"></van-cell>
+            <van-cell title="一级审核人" value="{{userInfo.unitManagerName}}" wx:if="{{userInfo.verifier==20}}"></van-cell>
+            <van-cell title="二级审核人" value="{{userInfo.unitPartyCommitteeName}}" wx:if="{{userInfo.verifier==20}}"></van-cell>
+            <van-cell isLink bindtap="onShowTimePicker" data-tag="0" title="start time" value="{{startTime||'select the time'}}"></van-cell>
+            <van-cell isLink bindtap="onShowTimePicker" data-tag="1" title="end time" value="{{endTime||'select the time'}}"></van-cell>
+            <van-field bind:change="onNumChange" inputAlign="right" label="In and out times" placeholder="进出次数" value="{{userInfo.maxTimes==null||userInfo.maxTimes==0?3:userInfo.maxTimes?userInfo.maxTimes:times}}"></van-field>
+            <my-picker bindchange="onSelect" columns="{{columns}}" label="reviewer" placeholder="please select reviewer"></my-picker>
+            <van-field bind:change="onRemarkChange" inputAlign="right" label="reasons for entry and exit" placeholder="please fill in the entry and exit reason" value="{{remark}}"></van-field>
+            <van-popup customStyle="height: 240px;" position="bottom" show="{{selectTimeShow}}">
+                <van-datetime-picker bindcancel="onHideTimePicker" bindconfirm="onSelectTimeOk" itemHeight="38" minDate="{{minDate}}" type="datetime" value="{{currentDate}}"></van-datetime-picker>
+            </van-popup>
+        </van-cell-group>
+    </view>
+    <view class="btn-list">
+        <van-button block bindtap="onSubmit" type="info" wx:if="{{userInfo.type==4}}">submit application</van-button>
+        <van-button block bindtap="onSubmit" type="info" wx:else>提交申请</van-button>
+    </view>
+    <view class="mask" wx:if="{{showMask}}"></view>
+</view>
+<view wx:else>
+    <view class="view-body">
+        <van-cell-group title="基本内容">
+            <van-cell title="申请人" value="{{userInfo.name}}"></van-cell>
+            <van-cell title="审核人" value="{{userInfo.unitManagerName}}" wx:if="{{userInfo.verifier==10}}"></van-cell>
+            <van-cell title="一级审核人" value="{{userInfo.unitManagerName}}" wx:if="{{userInfo.verifier==20}}"></van-cell>
+            <van-cell title="二级审核人" value="{{userInfo.unitPartyCommitteeName}}" wx:if="{{userInfo.verifier==20}}"></van-cell>
+            <van-cell isLink bindtap="onShowTimePicker" data-tag="0" title="开始时间" value="{{startTime||'选择时间'}}"></van-cell>
+            <van-cell isLink bindtap="onShowTimePicker" data-tag="1" title="终止时间" value="{{endTime||'选择时间'}}"></van-cell>
+            <van-field bind:change="onNumChange" inputAlign="right" label="每天进出次数" placeholder="进出次数" value="{{userInfo.maxTimes==null?3:userInfo.maxTimes?userInfo.maxTimes:times}}"></van-field>
+            <my-picker bindchange="onSelect" columns="{{columns}}" label="审核人" placeholder="请选择审核人"></my-picker>
+            <van-field bind:change="onRemarkChange" inputAlign="right" label="进出事由" placeholder="请填写进出事由" value="{{remark}}"></van-field>
+            <van-popup customStyle="height: 240px;" position="bottom" show="{{selectTimeShow}}">
+                <van-datetime-picker bindcancel="onHideTimePicker" bindconfirm="onSelectTimeOk" itemHeight="38" minDate="{{minDate}}" type="datetime" value="{{currentDate}}"></van-datetime-picker>
+            </van-popup>
+        </van-cell-group>
+    </view>
+    <view class="btn-list">
+        <van-button block bindtap="onSubmit" type="info">提交申请</van-button>
+    </view>
+    <view class="mask" wx:if="{{showMask}}"></view>
+</view>

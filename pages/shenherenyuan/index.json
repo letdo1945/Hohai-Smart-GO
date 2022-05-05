@@ -1,0 +1,13 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "人员审核",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+        "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+        "audit-list": "./cpts/list/index",
+        "van-tabbar": "/miniprogram_npm/@vant/weapp/tabbar/index",
+        "van-tabbar-item": "/miniprogram_npm/@vant/weapp/tabbar-item/index"
+    }
+}

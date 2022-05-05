@@ -1,0 +1,9 @@
+<image src="../../public/img/runBg.jpg" style="width:100vw;height:28vh;position:fixed;z-index:111"></image>
+<van-tabs color="#07c160" style="position:relative;top:28vh">
+    <van-tab title="总排名">
+        <JiLuList bind:user="onSelect" type="{{2}}"></JiLuList>
+    </van-tab>
+    <van-tab title="单日最高排名">
+        <JiLuList bind:user="onSelect" type="{{1}}"></JiLuList>
+    </van-tab>
+</van-tabs>

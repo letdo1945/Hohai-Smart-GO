@@ -1,0 +1,51 @@
+<view class="user-info">
+    <image class="avatar" src="{{wxUserInfo.avatarUrl}}"></image>
+    <view class="user-name">{{userInfo.name}}</view>
+    <view class="user-text">{{userInfo.organName||'系统未配置'}}</view>
+</view>
+<view class="view-body">
+    <view class="loading" wx:if="{{loading}}">
+        <van-loading color="#1989fa" size="40rpx"></van-loading> 数据读取中... </view>
+    <view bindtap="getTXInfo" class="loading" wx:if="{{error}}">
+        <van-icon color="#49f" customStyle="position: relative;top: 8rpx;margin-right: 12rpx;" name="warning"></van-icon>{{errorText}} </view>
+    <view class="context" wx:if="{{!!data}}">
+        <view wx:if="{{isBus}}">
+            <view class="time">{{data.time}}</view>
+            <view class="codeBox" wx:if="{{data.state==200}}">
+                <image class="imgCode" src="../../public/img/green.svg"></image>
+            </view>
+            <view class="codeBox" wx:else>
+                <image class="imgCode" src="../../public/img/red.svg"></image>
+            </view>
+            <view class="text">{{data.text}}</view>
+            <view class="gate-name" wx:if="{{data.state}}">{{data.gateName}}</view>
+            <view class="recordBox" data-item="{{item}}" wx:for="{{data.list}}" wx:key="index">
+                <view> 申请人：{{item.sqrName}} </view>
+                <view> 路线：{{item.cclxName}} </view>
+                <view> 上车时间：{{item.createTime}} </view>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="time">{{data.time}}</view>
+            <view class="codeBox" wx:if="{{data.state}}">
+                <image class="imgCode" src="../../public/img/green.svg"></image>
+            </view>
+            <view class="codeBox" wx:else>
+                <image class="imgCode" src="../../public/img/red.svg"></image>
+            </view>
+            <view>
+                <view class="text" wx:if="{{isMG}}">
+                    <view style="color:#1bc458;" wx:if="{{data.state}}"> 祝你平安 </view>
+                    <view wx:else> {{data.text}} </view>
+                </view>
+                <view class="text" wx:else> {{data.code!=200?data.text.gateName:'扫码成功'}} </view>
+                <view class="gate-name" wx:if="{{data.state}}">
+                    <view style="color:#1bc458;" wx:if="{{data.text.gateName}}"> {{data.text.gateName}} </view>
+                    <view wx:else> {{data.text.campusName+' - '+data.text.name+(data.text.twoName?' - '+data.text.twoName:'')}} </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <audio id="player" src="{{'https://fanyi.baidu.com/gettts?lan=zh&text='+(data.state?'祝你平安':'没有报备')+'&spd=5&source=web'}}"></audio>
+</view>
+<view class="copyright">- 技术支持 南京河海科技有限公司 -</view>

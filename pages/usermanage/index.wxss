@@ -1,0 +1,92 @@
+.scroll-body {
+    height: calc(100vh - 44px);
+}
+
+.list-body,.scroll-body {
+    position: relative;
+    width: 100%;
+}
+
+.list-body {
+    height: 100%;
+}
+
+.total {
+    background-color: #fff;
+    color: #aaa;
+    font-size: .5rem;
+    padding: 0 32rpx 12rpx;
+}
+
+.list-body>.card {
+    background: #fff;
+    border-radius: 32rpx;
+    box-shadow: 0 0 20rpx hsla(0,0%,71%,.4);
+    margin: 32rpx 0;
+    padding: 28rpx 0;
+    position: relative;
+    width: 100%;
+}
+
+.card:active {
+    background-color: #fafafa;
+}
+
+.card>.title {
+    font-size: .9rem;
+    font-weight: 700;
+    padding: 0 0 12rpx 32rpx;
+}
+
+.card>.row {
+    color: #aaa;
+    overflow: hidden;
+    padding-left: 32rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+}
+
+.card .tag {
+    display: inline;
+    margin-left: 6rpx;
+}
+
+.status {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-bottom: 6rpx;
+    position: relative;
+}
+
+.empty-box {
+    color: #aaa;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.empty-icon {
+    display: block;
+    height: 170rpx;
+    width: 212rpx;
+}
+
+.user-tag {
+    background: #09b9ff;
+    border-radius: 8rpx;
+    color: #fff;
+    display: inline-block;
+    font-size: .6rem;
+    padding: 2rpx 16rpx;
+    position: relative;
+    top: -2rpx;
+}
+
+.btn-list {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}

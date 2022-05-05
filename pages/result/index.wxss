@@ -1,0 +1,139 @@
+page {
+    background-image: linear-gradient(#6f86d6,#48c6ef);
+    color: #444;
+    height: 100vh;
+}
+
+.back:active {
+    opacity: .8;
+}
+
+.user-info {
+    color: #fff;
+    padding: 36rpx;
+    position: absolute;
+    width: 100%;
+}
+
+.user-info>.avatar {
+    border-radius: 60rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 36rpx;
+    width: 120rpx;
+}
+
+.user-info>.user-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    left: 175rpx;
+    position: absolute;
+    top: 41rpx;
+}
+
+.user-info>.user-text {
+    color: hsla(0,0%,100%,.8);
+    font-size: .8rem;
+    left: 175rpx;
+    position: absolute;
+    top: 106rpx;
+    width: 520rpx;
+}
+
+.view-body {
+    background-color: #fff;
+    border-radius: 32rpx;
+    box-shadow: 0 0 32rpx hsla(0,0%,39%,.4);
+    height: calc(100vh - 280rpx);
+    position: absolute;
+    right: 25rpx;
+    top: 190rpx;
+    width: 700rpx;
+}
+
+.copyright {
+    bottom: 30rpx;
+    color: #fff;
+    font-size: .6rem;
+    opacity: .6;
+}
+
+.copyright,.view-body>.loading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.view-body>.loading {
+    color: #aaa;
+}
+
+.context,.view-body>.loading {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.context {
+    position: absolute;
+    width: 100%;
+}
+
+.icon {
+    font-size: 8rem;
+}
+
+.codeBox,.icon {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.codeBox {
+    bottom: 30rpx;
+}
+
+.imgCode {
+    height: 430rpx;
+    width: 430rpx;
+}
+
+.success {
+    color: #3dd600;
+}
+
+.error {
+    color: #ff3838;
+}
+
+.gate-name {
+    color: #888;
+    font-size: 1rem;
+    position: relative;
+    text-align: center;
+    top: -40rpx;
+    width: 100%;
+}
+
+.text {
+    font-size: 1.6rem;
+    top: -50rpx;
+}
+
+.text,.time {
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.time {
+    color: #61a8f8;
+    font-size: 1.7rem;
+    top: -70rpx;
+}
+
+.recordBox {
+    font-size: .6rem;
+    left: 25%;
+    position: relative;
+}

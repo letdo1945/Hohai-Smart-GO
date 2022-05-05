@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "查询结果",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+        "van-loading": "/miniprogram_npm/@vant/weapp/loading/index"
+    }
+}

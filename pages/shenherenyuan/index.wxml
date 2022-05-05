@@ -1,0 +1,8 @@
+<van-tabs color="#1890ff">
+    <van-tab title="新增红名单待审">
+        <audit-list bind:user="onSelect" index="{{index}}" type="{{0}}"></audit-list>
+    </van-tab>
+    <van-tab title="新增白名单待审">
+        <audit-list bind:user="onSelect" index="{{index}}" type="{{1}}"></audit-list>
+    </van-tab>
+</van-tabs>

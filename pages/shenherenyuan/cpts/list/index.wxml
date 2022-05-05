@@ -1,0 +1,19 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="{{list.length?'calc(100% - 44px)':'100%'}}" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view bindtap="onDetial" class="card" data-item="{{item}}" wx:for="{{list}}" wx:key="id">
+                <view class="title">
+                    <van-checkbox catchtap="onCheckClick" checkedColor="#1890ff" data-index="{{index}}" iconSize="34rpx" value="{{item.checked}}"> 请求将 {{item.name+(type==0?' 设置为红名单':' 解除红名单身份')}} </van-checkbox>
+                </view>
+                <view class="context row">提交人：{{item.unitManagerName}}</view>
+                <view class="context row">提交时间：{{item.createTime}}</view>
+            </view>
+            <view class="empty-box" wx:if="{{!list.length}}">
+                <image class="empty-icon" src="../../../../public/img/empty.png"></image> 暂无记录 </view>
+        </view>
+    </van-scroll>
+</view>
+<view class="btn-list" wx:if="{{list.length}}">
+    <van-button bind:click="onSubmit" customStyle="width:50%" data-value="{{0}}" type="primary">批量通过</van-button>
+    <van-button bind:click="onSubmit" customStyle="width:50%" data-value="{{9}}" type="danger">批量拒绝</van-button>
+</view>

@@ -1,0 +1,13 @@
+<view class="view-body">
+    <van-cell-group title="基本信息">
+        <van-cell title="姓名" value="{{data.name||'未知'}}"></van-cell>
+        <van-cell title="校园卡号" value="{{data.campusCard||'暂无'}}"></van-cell>
+        <van-cell title="联系电话" value="{{data.phone||'暂无'}}"></van-cell>
+        <van-cell title="所属单位" value="{{data.departmentsUnitName||'暂无'}}"></van-cell>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button bind:click="onSubmit" customStyle="width:50%" data-value="{{0}}" type="primary">通过</van-button>
+    <van-button bind:click="onSubmit" customStyle="width:50%" data-value="{{9}}" type="danger">拒绝</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

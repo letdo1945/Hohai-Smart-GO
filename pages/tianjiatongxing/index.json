@@ -1,0 +1,13 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "报名",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "input-area": "/cpts/inputArea/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index"
+    }
+}

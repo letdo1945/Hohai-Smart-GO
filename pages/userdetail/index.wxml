@@ -1,0 +1,30 @@
+<view class="view-body">
+    <van-cell-group title="基本信息">
+        <van-cell isLink bindtap="onShowPicker" data-type="organ" title="院系名称" value="{{organ?organ.text:'请选择院系'}}"></van-cell>
+        <van-field bind:change="onInputChange" data-type="name" inputAlign="right" label="老师姓名" placeholder="请输入姓名" value="{{name}}"></van-field>
+        <van-field bind:change="onInputChange" data-type="campusCard" inputAlign="right" label="校园卡号" placeholder="请输入校园卡号" value="{{campusCard}}"></van-field>
+        <van-cell title="微信绑定" value="{{data.openid?'已绑定':'未绑定'}}" wx:if="{{data}}"></van-cell>
+        <van-cell isLink bindtap="onShowPicker" data-type="idCardType" title="证件类型" value="{{idCardType?idCardType.text:'请选择证件类型'}}"></van-cell>
+        <van-field bind:change="onInputChange" data-type="idCard" inputAlign="right" label="证件号" placeholder="请输入证件号" value="{{idCard}}"></van-field>
+        <van-field bind:change="onInputChange" data-type="phone" inputAlign="right" label="联系电话" placeholder="请输入联系电话" value="{{phone}}"></van-field>
+        <van-cell isLink bindtap="onShowPicker" data-type="specialExclusion" title="红白状态" value="{{specialExclusion?specialExclusion.text:'请选择红白名单状态'}}" wx:if="{{isMaster}}"></van-cell>
+        <van-cell isLink bindtap="onShowPicker" data-type="verifier" title="进出状态" value="{{verifier?verifier.text:'请选择状态类型'}}" wx:if="{{isMaster}}"></van-cell>
+        <van-cell isLink bindtap="onShowPicker" data-type="visitorVerifier" title="访客状态" value="{{visitorVerifier?visitorVerifier.text:'请选择状态类型'}}" wx:if="{{isMaster}}"></van-cell>
+        <van-popup customStyle="height: 240px;" position="bottom" show="{{selectShow}}">
+            <van-picker showToolbar bindcancel="onHidePicker" bindconfirm="onSelectOk" columns="{{columns}}"></van-picker>
+        </van-popup>
+    </van-cell-group>
+</view>
+<view class="btn-list" wx:if="{{!data}}">
+    <van-button bind:click="onSubmit" customStyle="width:100%" data-value="{{0}}" type="info">新增</van-button>
+</view>
+<view class="btn-list" wx:elif="{{data}}">
+    <van-button bind:click="onSubmit" customStyle="width:33%" data-value="{{9}}" type="danger">删除</van-button>
+    <van-button bind:click="onSubmit" customStyle="width:33%" data-value="{{1}}" type="info" wx:if="{{data.openid}}">解绑微信</van-button>
+    <van-button bind:click="onSubmit" customStyle="width:{{data.openid?34:67}}%" data-value="{{0}}" type="primary">更新</van-button>
+</view>
+<view class="btn-list" wx:else>
+    <van-button bind:click="onSubmit" customStyle="width:33%" data-value="{{1}}" type="info" wx:if="{{data.openid}}">解绑微信</van-button>
+    <van-button bind:click="onSubmit" customStyle="width:{{data.openid?67:100}}%" data-value="{{0}}" type="primary">更新</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

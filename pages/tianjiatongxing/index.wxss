@@ -1,0 +1,25 @@
+page {
+    background: #f7f8fa;
+}
+
+.mask,page {
+    height: 100vh;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.body {
+    height: calc(100vh - 44px);
+    overflow: auto;
+}
+
+.btn-list {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}

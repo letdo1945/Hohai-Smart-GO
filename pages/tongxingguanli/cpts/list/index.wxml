@@ -1,0 +1,25 @@
+<view class="scroll-body" style="background:#fff">
+    <view class="top">
+        <view class="rank">步数排名</view>
+        <button bindtap="onDetail" class="huoBtn" plain="true" size="mini" type="primary">查看名单</button>
+        <button bindtap="onSetting" class="huoBtn" plain="true" size="mini" type="default">设置名单</button>
+    </view>
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="calc(100% - 70px)" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view data-index="{{index}}" data-item="{{item}}" wx:for="{{list}}" wx:key="index">
+                <view class="list">
+                    <view class="rankName">
+                        <view class="num">{{item.number}}</view>
+                        <view class="news-img">
+                            <image class="photo" src="{{item.teacherPhoto}}"></image>
+                        </view>
+                        <view class="name">{{item.name}}</view>
+                    </view>
+                    <view class="rankNum">{{item.step}}</view>
+                </view>
+            </view>
+            <view class="empty-box" wx:if="{{!list.length}}">
+                <image class="empty-icon" src="../../../../public/img/empty.png"></image> 暂无记录 </view>
+        </view>
+    </van-scroll>
+</view>
