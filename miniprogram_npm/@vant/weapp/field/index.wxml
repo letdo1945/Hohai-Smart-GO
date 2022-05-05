@@ -1,0 +1,22 @@
+<van-cell arrowDirection="{{arrowDirection}}" border="{{border}}" center="{{center}}" clickable="{{clickable}}" customClass="van-field" customStyle="{{customStyle}}" icon="{{leftIcon}}" isLink="{{isLink}}" required="{{required}}" size="{{size}}" title="{{label}}" titleWidth="{{titleWidth}}">
+    <slot name="left-icon" slot="icon"></slot>
+    <slot name="label" slot="title"></slot>
+    <view class="{{utils.bem( 'field__body',[type] )}}">
+        <textarea adjustPosition="{{adjustPosition}}" autoFocus="{{autoFocus}}" autoHeight="{{!!autosize}}" bindblur="onBlur" bindconfirm="onConfirm" bindfocus="onFocus" bindinput="onInput" bindkeyboardheightchange="onKeyboardHeightChange" bindlinechange="onLineChange" class="input-class {{utils.bem( 'field__input',[ inputAlign,type,{disabled:disabled,error:error} ] )}}" cursor="{{cursor}}" cursorSpacing="{{cursorSpacing}}" disableDefaultPadding="{{disableDefaultPadding}}" disabled="{{disabled||readonly}}" fixed="{{fixed}}" focus="{{focus}}" holdKeyboard="{{holdKeyboard}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="{{utils.bem( 'field__placeholder',{error:error} )}}" placeholderStyle="{{placeholderStyle}}" selectionEnd="{{selectionEnd}}" selectionStart="{{selectionStart}}" showConfirmBar="{{showConfirmBar}}" style="{{computed.inputStyle(autosize)}}" value="{{innerValue}}" wx:if="{{type==='textarea'}}"></textarea>
+        <input adjustPosition="{{adjustPosition}}" autoFocus="{{autoFocus}}" bindblur="onBlur" bindconfirm="onConfirm" bindfocus="onFocus" bindinput="onInput" bindkeyboardheightchange="onKeyboardHeightChange" class="input-class {{utils.bem( 'field__input',[ inputAlign,{disabled:disabled,error:error} ] )}}" confirmHold="{{confirmHold}}" confirmType="{{confirmType}}" cursor="{{cursor}}" cursorSpacing="{{cursorSpacing}}" disabled="{{disabled||readonly}}" focus="{{focus}}" holdKeyboard="{{holdKeyboard}}" maxlength="{{maxlength}}" password="{{password||type==='password'}}" placeholder="{{placeholder}}" placeholderClass="{{utils.bem( 'field__placeholder',{error:error} )}}" placeholderStyle="{{placeholderStyle}}" selectionEnd="{{selectionEnd}}" selectionStart="{{selectionStart}}" type="{{type}}" value="{{innerValue}}" wx:else></input>
+        <van-icon catch:touchstart="onClear" class="van-field__clear-root van-field__icon-root" name="clear" wx:if="{{showClear}}"></van-icon>
+        <view bind:tap="onClickIcon" class="van-field__icon-container">
+            <van-icon class="van-field__icon-root {{iconClass}}" customClass="right-icon-class" name="{{rightIcon||icon}}" wx:if="{{rightIcon||icon}}"></van-icon>
+            <slot name="right-icon"></slot>
+            <slot name="icon"></slot>
+        </view>
+        <view class="van-field__button">
+            <slot name="button"></slot>
+        </view>
+    </view>
+    <view class="van-field__word-limit" wx:if="{{showWordLimit&&maxlength}}">
+        <view class="{{utils.bem( 'field__word-num',{full:value.length>=maxlength} )}}">{{value.length}}</view>/{{maxlength}} </view>
+    <view class="van-field__error-message {{utils.bem( 'field__error',[ errorMessageAlign,{disabled:disabled,error:error} ] )}}" wx:if="{{errorMessage}}"> {{errorMessage}} </view>
+</van-cell>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="computed" src="index.wxs" />
