@@ -1,0 +1,5 @@
+<view class="custom-class {{utils.bem( 'tag',[ type,size,{mark:mark,plain:plain,round:round} ] )}} {{plain?'van-hairline--surround':''}}" style="{{color&&!plain?'background-color: '+color+';':''}}{{textColor||color&&plain?'color: '+(textColor||color):''}}">
+    <slot></slot>
+    <van-icon bind:click="onClose" customClass="van-tag__close" name="cross" wx:if="{{closeable}}"></van-icon>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />
