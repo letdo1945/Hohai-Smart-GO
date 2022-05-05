@@ -1,0 +1,16 @@
+<view class="van-calendar__month" style="{{computed.getMonthStyle(visible,date,rowHeight)}}">
+    <view class="van-calendar__month-title" wx:if="{{showMonthTitle}}"> {{computed.formatMonthTitle(date)}} </view>
+    <view class="van-calendar__days" wx:if="{{visible}}">
+        <view class="van-calendar__month-mark" wx:if="{{showMark}}"> {{computed.getMark(date)}} </view>
+        <view bindtap="onClick" class="{{utils.bem( 'calendar__day',[item.type] )}} {{item.className}}" data-index="{{index}}" style="{{computed.getDayStyle(item.type,index,date,rowHeight,color)}}" wx:for="{{days}}" wx:key="index">
+            <view class="van-calendar__selected-day" style="background: {{color}}" wx:if="{{item.type==='selected'}}">
+                <view class="van-calendar__top-info" wx:if="{{item.topInfo}}">{{item.topInfo}}</view> {{item.text}} <view class="van-calendar__bottom-info" wx:if="{{item.bottomInfo}}"> {{item.bottomInfo}} </view>
+            </view>
+            <view wx:else>
+                <view class="van-calendar__top-info" wx:if="{{item.topInfo}}">{{item.topInfo}}</view> {{item.text}} <view class="van-calendar__bottom-info" wx:if="{{item.bottomInfo}}"> {{item.bottomInfo}} </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="computed" src="index.wxs" />
+<wxs module="utils" src="../../../wxs/utils.wxs" />

@@ -1,0 +1,105 @@
+.van-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.van-multi-ellipsis--l2 {
+    -webkit-line-clamp: 2;
+}
+
+.van-multi-ellipsis--l2,.van-multi-ellipsis--l3 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.van-multi-ellipsis--l3 {
+    -webkit-line-clamp: 3;
+}
+
+.van-clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.van-hairline,.van-hairline--bottom,.van-hairline--left,.van-hairline--right,.van-hairline--surround,.van-hairline--top,.van-hairline--top-bottom {
+    position: relative;
+}
+
+.van-hairline--bottom:after,.van-hairline--left:after,.van-hairline--right:after,.van-hairline--surround:after,.van-hairline--top-bottom:after,.van-hairline--top:after,.van-hairline:after {
+    border: 0 solid #eee;
+    bottom: -50%;
+    box-sizing: border-box;
+    content: " ";
+    left: -50%;
+    pointer-events: none;
+    position: absolute;
+    right: -50%;
+    top: -50%;
+    transform: scale(.5);
+    transform-origin: center;
+}
+
+.van-hairline--top:after {
+    border-top-width: 1px;
+}
+
+.van-hairline--left:after {
+    border-left-width: 1px;
+}
+
+.van-hairline--right:after {
+    border-right-width: 1px;
+}
+
+.van-hairline--bottom:after {
+    border-bottom-width: 1px;
+}
+
+.van-hairline--top-bottom:after {
+    border-width: 1px 0;
+}
+
+.van-hairline--surround:after {
+    border-width: 1px;
+}
+
+.van-calendar__header {
+    box-shadow: 0 2px 10px hsla(220,1%,50%,.16);
+    box-shadow: var(--calendar-header-box-shadow,0 2px 10px hsla(220,1%,50%,.16));
+    flex-shrink: 0;
+}
+
+.van-calendar__header-subtitle,.van-calendar__header-title {
+    font-weight: 500;
+    font-weight: var(--font-weight-bold,500);
+    height: 44px;
+    height: var(--calendar-header-title-height,44px);
+    line-height: 44px;
+    line-height: var(--calendar-header-title-height,44px);
+    text-align: center;
+}
+
+.van-calendar__header-title+.van-calendar__header-title,.van-calendar__header-title:empty {
+    display: none;
+}
+
+.van-calendar__header-title:empty+.van-calendar__header-title {
+    display: block!important;
+}
+
+.van-calendar__weekdays {
+    display: flex;
+}
+
+.van-calendar__weekday {
+    flex: 1;
+    font-size: 12px;
+    font-size: var(--calendar-weekdays-font-size,12px);
+    line-height: 30px;
+    line-height: var(--calendar-weekdays-height,30px);
+    text-align: center;
+}

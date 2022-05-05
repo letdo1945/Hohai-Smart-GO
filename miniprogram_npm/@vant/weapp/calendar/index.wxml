@@ -1,0 +1,6 @@
+<import src="./calendar.wxml"></import>
+<van-popup bind:after-enter="onOpened" bind:after-leave="onClosed" bind:close="onClose" bind:enter="onOpen" closeIconClass="van-calendar__close-icon" closeOnClickOverlay="{{closeOnClickOverlay}}" closeable="{{showTitle||showSubtitle}}" customClass="van-calendar__popup--{{position}}" position="{{position}}" round="{{round}}" show="{{show}}" wx:if="{{poppable}}">
+    <template is="calendar" data="{{title:title,subtitle:subtitle,showTitle:showTitle,showSubtitle:showSubtitle,minDate:minDate,maxDate:maxDate,type:type,color:color,showMark:showMark,formatter:formatter,rowHeight:rowHeight,currentDate:currentDate,safeAreaInsetBottom:safeAreaInsetBottom,showConfirm:showConfirm,confirmDisabledText:confirmDisabledText,confirmText:confirmText,scrollIntoView:scrollIntoView,allowSameDay:allowSameDay}}"></template>
+</van-popup>
+<template is="calendar" data="{{title:title,subtitle:subtitle,showTitle:showTitle,showSubtitle:showSubtitle,minDate:minDate,maxDate:maxDate,type:type,color:color,showMark:showMark,formatter:formatter,rowHeight:rowHeight,currentDate:currentDate,safeAreaInsetBottom:safeAreaInsetBottom,showConfirm:showConfirm,confirmDisabledText:confirmDisabledText,confirmText:confirmText,scrollIntoView:scrollIntoView,allowSameDay:allowSameDay}}" wx:else></template>
+<wxs module="computed" src="index.wxs" />
