@@ -1,0 +1,12 @@
+<van-notice-bar wrapable scrollable="false" text="如果此人员没有身份证，请提醒其携带此处填写的证件入校"></van-notice-bar>
+<van-cell-group title="基本内容">
+    <van-field bind:change="onNameChange" inputAlign="right" label="姓名" placeholder="请输入姓名" value="{{name}}"></van-field>
+    <van-cell isLink bindtap="onShowPicker" title="证件类型" value="{{type.text}}"></van-cell>
+    <van-field bind:blur="onCardNumChangeBlur" bind:change="onCardNumChange" inputAlign="right" label="证件号" placeholder="请输入证件号" value="{{cardNum}}"></van-field>
+    <van-field bind:blur="onPhoneChangeBlur" bind:change="onPhoneChange" inputAlign="right" label="联系电话" placeholder="请输入联系电话" value="{{phone}}"></van-field>
+    <van-popup customStyle="height: 240px;" position="bottom" show="{{selectShow}}">
+        <van-picker showToolbar bindcancel="onHidePicker" bindconfirm="onSelectOk" columns="{{cardType}}"></van-picker>
+    </van-popup>
+</van-cell-group>
+<view class="mask" wx:if="{{showMask}}"></view>
+<van-button block bindtap="onSubmit" customStyle="position:absolute;bottom:0;" type="info">添加</van-button>

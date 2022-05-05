@@ -1,0 +1,11 @@
+<van-cell-group title="基本信息">
+    <van-cell title="上报时间" value="{{data.createTime}}"></van-cell>
+    <van-cell title="处理状态">
+        <view slot="right-icon">
+            <view class="status" style="color:#c7c7c7" wx:if="{{data.state==0}}">未查看</view>
+            <view class="status" style="color:#f1cc70" wx:if="{{data.state==1}}">已查看</view>
+            <view class="status" style="color:#309436" wx:if="{{data.state==2}}">处理中</view>
+            <view class="status" style="color:#1890ff" wx:if="{{data.state==3}}">已结案</view>
+        </view>
+    </van-cell>
+</van-cell-group>

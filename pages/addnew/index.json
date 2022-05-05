@@ -1,0 +1,15 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "添加访客",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+        "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+        "van-picker": "/miniprogram_npm/@vant/weapp/picker/index"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "乘车记录详情",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index"
+    }
+}

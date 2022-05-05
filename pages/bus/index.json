@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "乘车记录",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "my-scroll": "/cpts/scroll/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+    }
+}

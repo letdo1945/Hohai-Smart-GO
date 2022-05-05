@@ -1,0 +1,10 @@
+<my-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="100%" isEmpty="{{!list.length}}" isEnd="{{isEnd}}" loading="{{loading}}">
+    <view class="list-body">
+        <view class="card" data-item="{{item}}" wx:for="{{list}}" wx:key="index">
+            <view class="title"> 扫码时间：{{item.createTime}} </view>
+            <view class="con"> 申请人：{{item.sqrName}} </view>
+            <view class="con"> 乘坐人：{{item.name}} </view>
+            <view class="con"> 乘坐路线：{{item.route}} </view>
+        </view>
+    </view>
+</my-scroll>

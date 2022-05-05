@@ -1,0 +1,22 @@
+page {
+    background: #f7f8fa;
+}
+
+.remark {
+    color: #aaa;
+    min-height: 200rpx;
+    padding: 0 35rpx 35rpx;
+}
+
+.remark,.well {
+    background: #fff;
+}
+
+.well {
+    padding: 0 25rpx 25rpx;
+}
+
+.well>.img-box {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+}

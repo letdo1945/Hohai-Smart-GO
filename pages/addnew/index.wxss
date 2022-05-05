@@ -1,0 +1,21 @@
+page {
+    background: #f7f8fa;
+}
+
+.mask,page {
+    height: 100vh;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+textarea {
+    background: #fff;
+    height: 300rpx;
+    padding: 0 16px 10px;
+    width: calc(100% - 32px);
+}
