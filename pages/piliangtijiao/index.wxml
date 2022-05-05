@@ -1,0 +1,15 @@
+<view class="view-body">
+    <van-cell-group title="基本内容">
+        <van-cell title="勾选人数" value="{{num}}人"></van-cell>
+        <van-cell isLink bindtap="onShowTimePicker" title="进出时间" value="{{time||'选择时间'}}"></van-cell>
+        <van-cell border="{{false}}" title="进出事由"></van-cell>
+        <inputArea bind:change="onRemarkChange" customStyle="height: 300rpx;background: #fff;width: calc(100% - 32px);padding: 0 16px 10px;" placeholder="请填写进出事由" value="{{remark}}"></inputArea>
+        <van-popup customStyle="height: 240px;" position="bottom" show="{{selectTimeShow}}">
+            <van-datetime-picker bindcancel="onHideTimePicker" bindconfirm="onSelectTimeOk" itemHeight="38" minDate="{{minDate}}" type="date" value="{{currentDate}}"></van-datetime-picker>
+        </van-popup>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onSubmit" type="info">提交</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

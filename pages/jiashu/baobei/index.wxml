@@ -1,0 +1,18 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="calc(100% - 44px)" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view bindtap="onUpdate" class="card" data-index="{{index}}" data-item="{{item}}" wx:for="{{list}}" wx:key="index">
+                <view class="title"> 家属姓名：{{item.name||'未知'}} <view style="display:inline-block;position: absolute;right:15px;color:#1890ff" wx:if="{{item.state==0}}">白名单</view>
+                    <view style="display:inline-block;position: absolute;right:15px;color:red" wx:else>红名单</view>
+                </view>
+                <view class="row"> 身份证号：{{item.idCard||'未知'}} </view>
+                <view class="row"> 手机号：{{item.phone||'未知'}} </view>
+            </view>
+            <view class="empty-box" wx:if="{{!list.length}}">
+                <image class="empty-icon" src="../../../public/img/empty.png"></image> 暂无记录 </view>
+        </view>
+    </van-scroll>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onAddNew" type="info">添加家属</van-button>
+</view>

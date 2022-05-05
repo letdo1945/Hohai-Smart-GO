@@ -1,0 +1,16 @@
+<van-cell-group title="基本内容">
+    <van-field bind:change="onNameChange" inputAlign="right" label="姓名" placeholder="请输入姓名" value="{{name||'未知'}}"></van-field>
+    <van-cell isLink bindtap="onShowPicker" title="证件类型" value="{{type.text}}"></van-cell>
+    <van-field bind:change="onCardNumChange" inputAlign="right" label="证件号" placeholder="请输入证件号" value="{{cardNum||'未知'}}"></van-field>
+    <van-field bind:change="onPhoneChange" inputAlign="right" label="联系电话" placeholder="请输入联系电话" value="{{phone||'未知'}}"></van-field>
+    <van-field bind:change="onAddressChange" inputAlign="right" label="地址" placeholder="请输入地址" value="{{address||'未知'}}"></van-field>
+    <van-popup customStyle="height: 240px;" position="bottom" show="{{selectShow}}">
+        <van-picker showToolbar bindcancel="onHidePicker" bindconfirm="onSelectOk" columns="{{cardType}}"></van-picker>
+    </van-popup>
+</van-cell-group>
+<view class="btn-list">
+    <van-button bindtap="onSubmit" customStyle="width:50%" type="info">更新</van-button>
+    <van-button bindtap="onForbid" customStyle="width:50%" type="danger">删除</van-button>
+    <van-button block bindtap="onSetList" type="primary">设置名单</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

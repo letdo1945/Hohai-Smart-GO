@@ -1,0 +1,8 @@
+<van-cell-group title="基本信息">
+    <van-field bindinput="onInput" data-name="phone" inputAlign="right" label="手机号码" value="{{info.phone}}"></van-field>
+    <inputArea bind:change="onAddressChange" customStyle="height: 200rpx;background: #fff;width: calc(100% - 32px);padding: 10px 16px 10px;" placeholder="请填写详细地址" value="{{info.address}}"></inputArea>
+</van-cell-group>
+<view class="btn-list">
+    <van-button block bindtap="onSubmit" type="primary">修改</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

@@ -1,0 +1,38 @@
+<view class="view-body">
+    <image src="../../public/img/runBg.jpg" style="width:100vw;height:28vh;position:fixed;z-index:111"></image>
+    <view data-item="{{item}}" style="position:relative;top:28vh" wx:for="{{list}}" wx:key="index">
+        <van-cell-group title="昨日数据统计">
+            <view class="rankCard">
+                <view class="steps">
+                    <view class="sizeStyle">昨日步数</view>
+                    <view class="num">{{item.steps}}</view>
+                </view>
+                <view class="rank">
+                    <view class="sizeStyle">昨日排名</view>
+                    <view class="num">{{item.number}}</view>
+                </view>
+            </view>
+        </van-cell-group>
+        <van-cell-group data-item="{{item}}" title="本周最好成绩" wx:for="{{workList}}" wx:key="index">
+            <view class="rankCard">
+                <view class="steps">
+                    <view class="sizeStyle">单日最高步数</view>
+                    <view class="num">{{item.steps}}</view>
+                </view>
+                <view class="rank">
+                    <view class="sizeStyle">最高步数排名</view>
+                    <view class="num">{{item.number}}</view>
+                </view>
+            </view>
+        </van-cell-group>
+        <van-cell-group title="奖品邮寄地址">
+            <van-cell title="姓名" value="{{item.teacherName}}"></van-cell>
+            <van-cell title="手机号码" value="{{item.phone}}"></van-cell>
+            <text style="text-align:center;display: inline-block;background: #fff;width: calc(100% - 32px);padding: 0 16px 10px;padding-top:30rpx;padding-bottom:30rpx;">{{item.address||'未知'}}</text>
+        </van-cell-group>
+    </view>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onEdit" type="primary">修改地址</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

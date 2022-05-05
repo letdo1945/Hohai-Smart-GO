@@ -1,0 +1,11 @@
+<van-tabs color="#1890ff">
+    <van-tab title="待审核">
+        <JiLuList type="{{0}}"></JiLuList>
+    </van-tab>
+    <van-tab title="已通过">
+        <JiLuList type="{{1}}"></JiLuList>
+    </van-tab>
+    <van-tab title="未通过">
+        <JiLuList type="{{9}}"></JiLuList>
+    </van-tab>
+</van-tabs>

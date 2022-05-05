@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "获奖名单",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-scroll": "/cpts/scroll/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+    }
+}

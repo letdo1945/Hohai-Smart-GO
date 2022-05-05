@@ -1,0 +1,35 @@
+<view class="scroll-body" style="height: {{data.type!==2?data.status[0].type==0?'100vh':'calc(100vh - 44px)':'calc(100vh - 44px)'}};">
+    <van-cell-group title="访客列表" wx:if="{{data.type!==0}}">
+        <view class="list-body">
+            <view class="card" wx:for="{{data.universityVisitorItem}}" wx:key="index">
+                <view class="title">
+                    <van-icon customStyle="position: relative;top: 8rpx;margin-right: 12rpx;" name="manager"></van-icon>{{item.visitorName}} </view>
+                <view class="card-num"> 证件号码：{{item.visitorCard}} </view>
+                <view class="phone-num"> 联系方式：{{item.visitorPhone||'未填写'}} </view>
+            </view>
+        </view>
+    </van-cell-group>
+    <van-cell-group title="基本内容">
+        <van-cell title="申请/登记时间" value="{{data.createTime}}"></van-cell>
+        <van-cell title="状态" wx:if="{{data.type!==2}}">
+            <view slot="right-icon">
+                <view style="color: {{data.status[0].color}}">{{data.status[0].label}}</view>
+            </view>
+        </van-cell>
+        <van-cell title="申请人" value="{{data.applicantName}}" wx:if="{{data.type!==2}}"></van-cell>
+        <van-cell title="审核人" value="{{userInfo.unitManagerName}}" wx:if="{{data.type!==2&&data.verifier==10}}">
+            <view slot="right-icon" style="color: {{data.status[1].color}};padding-left:6rpx;"> {{data.status[1].label}} </view>
+        </van-cell>
+        <van-cell title="一级审核人" value="{{userInfo.unitManagerName}}" wx:if="{{data.type!==2&&data.verifier==20}}">
+            <view slot="right-icon" style="color: {{data.status[1].color}};padding-left:6rpx;"> {{data.status[1].label}} </view>
+        </van-cell>
+        <van-cell title="二级审核人" value="{{userInfo.unitPartyCommitteeName}}" wx:if="{{data.type!==2&&data.verifier==20}}">
+            <view slot="right-icon" style="color: {{data.status[2].color}};padding-left:6rpx;"> {{data.status[2].label}} </view>
+        </van-cell>
+        <van-cell title="开始时间" value="{{data.startTime}}"></van-cell>
+        <van-cell title="终止时间" value="{{data.endTime}}"></van-cell>
+        <van-cell border="{{false}}" title="进出事由"></van-cell>
+        <view class="textarea">{{data.visitorReason}}</view>
+    </van-cell-group>
+</view>
+<van-button block bindtap="onReSubmit" type="info" wx:if="{{data.type!==2||data.status[0].type==1}}">再次申请</van-button>

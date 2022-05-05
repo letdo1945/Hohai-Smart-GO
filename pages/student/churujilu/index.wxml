@@ -1,0 +1,20 @@
+<view wx:if="{{userInfo.type==4}}">
+    <van-tabs color="#1890ff">
+        <van-tab title="site records">
+            <JiLuList type="{{0}}"></JiLuList>
+        </van-tab>
+        <van-tab title="gatekeeper records">
+            <JiLuList type="{{1}}"></JiLuList>
+        </van-tab>
+    </van-tabs>
+</view>
+<view wx:else>
+    <van-tabs color="#1890ff">
+        <van-tab title="场所记录">
+            <JiLuList type="{{0}}"></JiLuList>
+        </van-tab>
+        <van-tab title="门岗记录">
+            <JiLuList type="{{1}}"></JiLuList>
+        </van-tab>
+    </van-tabs>
+</view>

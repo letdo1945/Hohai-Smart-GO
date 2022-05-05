@@ -1,0 +1,48 @@
+.scroll-body {
+    height: calc(100vh - 44px);
+    position: relative;
+    width: 100%;
+}
+
+.list-body {
+    height: 100%;
+    left: 5%;
+    position: relative;
+    width: 90%;
+}
+
+.list-body>.card {
+    background: #fff;
+    border-radius: 32rpx;
+    box-shadow: 0 0 20rpx hsla(0,0%,71%,.4);
+    margin: 32rpx 0;
+    padding: 28rpx 0;
+    position: relative;
+    width: 100%;
+}
+
+.card:active {
+    background-color: #fafafa;
+}
+
+.card>.title {
+    font-size: .9rem;
+    font-weight: 700;
+    padding: 0 0 12rpx 32rpx;
+}
+
+.card>.row {
+    color: #aaa;
+    overflow: hidden;
+    padding-left: 32rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+}
+
+.status {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-bottom: 6rpx;
+    position: relative;
+}

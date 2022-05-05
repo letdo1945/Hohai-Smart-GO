@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-scroll": "/cpts/scroll/index",
+        "van-tag": "/miniprogram_npm/@vant/weapp/tag/index"
+    }
+}

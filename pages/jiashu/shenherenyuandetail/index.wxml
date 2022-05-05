@@ -1,0 +1,15 @@
+<view class="view-body">
+    <van-cell-group title="基本信息">
+        <van-cell title="提交人" value="{{data.teacherName||'未知'}}"></van-cell>
+        <van-cell title="提交人身份证" value="{{data.teacherIdCard||'暂无'}}"></van-cell>
+        <van-cell title="家属姓名" value="{{data.familyName||'暂无'}}"></van-cell>
+        <van-cell title="家属身份证" value="{{data.teacherIdCard||'暂无'}}"></van-cell>
+        <van-cell border="{{false}}" title="设置原因"></van-cell>
+        <inputArea customStyle="height: 300rpx;background: #fff;width: calc(100% - 32px);padding: 0 16px 10px;" value="{{data.reason||'没有填写原因'}}"></inputArea>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button bind:click="onSubmit" customStyle="width:50%" data-value="{{0}}" type="primary">通过</van-button>
+    <van-button bind:click="onSubmit" customStyle="width:50%" data-value="{{9}}" type="danger">拒绝</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

@@ -1,0 +1,11 @@
+{
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "van-loading": "/miniprogram_npm/@vant/weapp/loading/index",
+        "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+        "van-checkbox": "/miniprogram_npm/@vant/weapp/checkbox/index"
+    }
+}

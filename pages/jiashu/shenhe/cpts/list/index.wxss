@@ -1,0 +1,74 @@
+.scroll-body {
+    height: calc(100vh - 44px);
+    position: relative;
+    width: 100%;
+}
+
+.list-body {
+    height: 100%;
+    left: 5%;
+    position: relative;
+    width: 90%;
+}
+
+.list-body>.card {
+    background: #fff;
+    border-radius: 32rpx;
+    box-shadow: 0 0 20rpx hsla(0,0%,71%,.4);
+    margin: 32rpx 0;
+    padding: 28rpx 0;
+    position: relative;
+    width: 100%;
+}
+
+.card:active {
+    background-color: #fafafa;
+}
+
+.card>.title {
+    font-size: .9rem;
+    font-weight: 700;
+    padding-left: 32rpx;
+}
+
+.card>.row {
+    color: #aaa;
+    font-size: .8rem;
+    overflow: hidden;
+    padding: 4rpx 0 0 32rpx;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+}
+
+.card>.context {
+    font-size: .9rem;
+    margin-top: 8rpx;
+}
+
+.card .tag {
+    display: inline;
+    margin-left: 6rpx;
+}
+
+.empty-box {
+    color: #aaa;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.empty-icon {
+    display: block;
+    height: 170rpx;
+    width: 212rpx;
+}
+
+.btn-list {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}

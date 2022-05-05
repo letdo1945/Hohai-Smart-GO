@@ -1,0 +1,7 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="100%" isEmpty="{{!list.length}}" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <van-cell title="{{item.campusName||item.gateName}}" value="{{item.createTime}}" wx:for="{{list}}" wx:key="index"></van-cell>
+        </view>
+    </van-scroll>
+</view>

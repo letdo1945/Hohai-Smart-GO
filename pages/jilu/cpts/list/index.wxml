@@ -1,0 +1,23 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="100%" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view bindtap="onShowDetail" class="card" data-index="{{index}}" wx:for="{{list}}" wx:key="index">
+                <view class="title"> 申请日期：{{item.createTime}} <view class="tag">
+                        <van-tag type="success" wx:if="{{item.type==0}}">本人</van-tag>
+                        <van-tag type="warning" wx:if="{{item.type==1}}">访客</van-tag>
+                        <van-tag type="warning" wx:if="{{item.type==2}}">批量</van-tag>
+                    </view>
+                </view>
+                <view class="row" wx:if="{{item.type!==2}}">
+                    <view class="status" style="color: {{item.status[0].color}}">{{item.status[0].label}}</view>
+                </view>
+                <view class="row"> 进出日期：{{item.startTime}} </view>
+                <view class="context row" wx:if="{{item.type!==0}}">人数： <view class="user-tag" wx:if="{{item.universityVisitorItem.length==1}}">{{item.universityVisitorItem[0].visitorName}},{{item.universityVisitorItem.length}}人</view>
+                    <view class="user-tag" wx:if="{{item.universityVisitorItem.length>1}}">{{item.universityVisitorItem[0].visitorName}}等{{item.universityVisitorItem.length}}人</view>
+                </view>
+            </view>
+            <view class="empty-box" wx:if="{{!list.length}}">
+                <image class="empty-icon" src="../../../../public/img/empty.png"></image> 暂无记录 </view>
+        </view>
+    </van-scroll>
+</view>

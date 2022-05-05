@@ -1,0 +1,34 @@
+<view wx:if="{{userInfo.type==4}}">
+    <van-cell-group title="BasicContent">
+        <van-cell title="application/registration time" value="{{data.createTime}}"></van-cell>
+        <van-cell title="state">
+            <view slot="right-icon">
+                <view style="color: {{data.status[0].color}}">{{data.status[0].label}}</view>
+            </view>
+        </van-cell>
+        <van-cell title="applicant" value="{{data.applicantName}}" wx:if="{{data.type!==2}}"></van-cell>
+        <van-cell title="first level auditor" value="{{data.oneVerifier}}" wx:if="{{data.oneVerifier}}"></van-cell>
+        <van-cell title="secondary auditor" value="{{data.twoVerifier}}" wx:if="{{data.twoVerifier}}"></van-cell>
+        <van-cell title="start time" value="{{data.startTime}}"></van-cell>
+        <van-cell title="end time" value="{{data.endTime}}"></van-cell>
+        <van-cell border="{{false}}" title="reasons for entry and exit"></van-cell>
+        <view class="textarea">{{data.visitorReason}}</view>
+    </van-cell-group>
+</view>
+<view wx:else>
+    <van-cell-group title="基本内容">
+        <van-cell title="申请/登记时间" value="{{data.createTime}}"></van-cell>
+        <van-cell title="状态">
+            <view slot="right-icon">
+                <view style="color: {{data.status[0].color}}">{{data.status[0].label}}</view>
+            </view>
+        </van-cell>
+        <van-cell title="申请人" value="{{data.applicantName}}" wx:if="{{data.type!==2}}"></van-cell>
+        <van-cell title="一级审核人" value="{{data.oneVerifier}}" wx:if="{{data.oneVerifier}}"></van-cell>
+        <van-cell title="二级审核人" value="{{data.twoVerifier}}" wx:if="{{data.twoVerifier}}"></van-cell>
+        <van-cell title="开始时间" value="{{data.startTime}}"></van-cell>
+        <van-cell title="终止时间" value="{{data.endTime}}"></van-cell>
+        <van-cell border="{{false}}" title="进出事由"></van-cell>
+        <view class="textarea">{{data.visitorReason}}</view>
+    </van-cell-group>
+</view>

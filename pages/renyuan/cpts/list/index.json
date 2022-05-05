@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-scroll": "/cpts/scroll/index",
+        "van-search": "/miniprogram_npm/@vant/weapp/search/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index"
+    }
+}

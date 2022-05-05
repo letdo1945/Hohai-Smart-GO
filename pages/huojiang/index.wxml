@@ -1,0 +1,18 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="calc(100% - 44px)" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view bindtap="onUpdate" class="card" data-index="{{index}}" data-item="{{item}}" wx:for="{{list}}" wx:key="index">
+                <view class="title"> 获奖人：{{item.teacherName||'未知'}} <view style="display:inline-block;position: absolute;right:15px;color:#1890ff" wx:if="{{item.score==1}}">一等奖</view>
+                    <view style="display:inline-block;position: absolute;right:15px;color:#1890ff" wx:if="{{item.score==2}}">二等奖</view>
+                    <view style="display:inline-block;position: absolute;right:15px;color:#1890ff" wx:if="{{item.score==3}}">纪念奖</view>
+                </view>
+                <view class="row"> 排名：第{{item.number||'未知'}}名 </view>
+                <view class="row"> 步数：{{item.maxStep||'未知'}}步 </view>
+                <view class="row"> 手机号：{{item.phone||'未知'}} </view>
+                <view class="row"> 地址：{{item.address||'未知'}} </view>
+            </view>
+            <view class="empty-box" wx:if="{{!list.length}}">
+                <image class="empty-icon" src="../../public/img/empty.png"></image> 暂无记录 </view>
+        </view>
+    </van-scroll>
+</view>

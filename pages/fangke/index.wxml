@@ -1,0 +1,33 @@
+<view class="view-body">
+    <van-cell-group title="访客列表">
+        <view class="list-body">
+            <view class="card" wx:for="{{userList}}" wx:key="index">
+                <view class="title">
+                    <van-icon customStyle="position: relative;top: 8rpx;margin-right: 12rpx;" name="manager"></van-icon>{{item.name}} </view>
+                <view class="card-num"> 证件号码：{{item.cardNum}} </view>
+                <view class="phone-num"> 联系方式：{{item.phone||'未填写'}} </view>
+                <view bindtap="onClose" class="close-icon" data-index="{{index}}">
+                    <van-icon name="cross"></van-icon>
+                </view>
+            </view>
+            <view bindtap="onAddNew" class="add-new card">
+                <van-icon customStyle="position: relative;top: 8rpx;margin-right: 6rpx;" name="plus"></van-icon> 添加访客 </view>
+        </view>
+    </van-cell-group>
+    <van-cell-group title="基本内容">
+        <van-cell title="申请人" value="{{userInfo.name}}"></van-cell>
+        <van-cell title="审核人" value="{{userInfo.unitManagerName}}" wx:if="{{userInfo.verifier==10}}"></van-cell>
+        <van-cell title="一级审核人" value="{{userInfo.unitManagerName}}" wx:if="{{userInfo.verifier==20}}"></van-cell>
+        <van-cell title="二级审核人" value="{{userInfo.unitPartyCommitteeName}}" wx:if="{{userInfo.verifier==20}}"></van-cell>
+        <van-cell isLink bindtap="onShowTimePicker" data-tag="0" title="开始时间" value="{{startTime||'选择时间'}}"></van-cell>
+        <van-cell isLink bindtap="onShowTimePicker" data-tag="1" title="终止时间" value="{{endTime||'选择时间'}}"></van-cell>
+        <van-field bind:change="onRemarkChange" inputAlign="right" label="进出事由" placeholder="请填写进出事由" value="{{remark}}"></van-field>
+        <van-popup customStyle="height: 240px;" position="bottom" show="{{selectTimeShow}}">
+            <van-datetime-picker bindcancel="onHideTimePicker" bindconfirm="onSelectTimeOk" itemHeight="38" minDate="{{minDate}}" type="date" value="{{currentDate}}"></van-datetime-picker>
+        </van-popup>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onSubmit" type="info">{{userInfo.verifier==0?'登记':'提交审核'}}</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

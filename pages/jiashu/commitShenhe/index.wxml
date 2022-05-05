@@ -1,0 +1,7 @@
+<van-cell-group title="基本内容">
+    <van-cell title="人员类型" value="{{data.state==0?'白名单':'红名单'}}"></van-cell>
+    <van-cell border="{{false}}" title="设置原因"></van-cell>
+    <inputArea bind:change="onRemarkChange" customStyle="height: 300rpx;background: #fff;width: calc(100% - 32px);padding: 0 16px 10px;" placeholder="请填写原因" value="{{remark}}"></inputArea>
+</van-cell-group>
+<view class="mask" wx:if="{{showMask}}"></view>
+<van-button block bindtap="onSubmit" customStyle="position:absolute;bottom:0;" type="info">提交</van-button>

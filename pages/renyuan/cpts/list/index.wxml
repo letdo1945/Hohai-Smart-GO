@@ -1,0 +1,11 @@
+<view class="scroll-body">
+    <van-search bind:clear="onClear" bind:search="onSearch" placeholder="请输入搜索关键词" value="{{keyword}}"></van-search>
+    <view class="total" wx:if="{{total}}">总计 {{total}} 名人员</view>
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="calc(100% - 70px)" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <van-cell isLink bind:click="onShowDetail" data-item="{{item}}" title="{{item.name}}" value="{{item.organ&&item.organ.name||'暂无'}}" wx:for="{{list}}" wx:key="index"></van-cell>
+            <view class="empty-box" wx:if="{{!list.length}}">
+                <image class="empty-icon" src="../../../../public/img/empty.png"></image> 暂无人员 </view>
+        </view>
+    </van-scroll>
+</view>

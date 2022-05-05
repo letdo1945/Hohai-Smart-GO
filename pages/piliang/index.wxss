@@ -1,0 +1,34 @@
+.scroll-body {
+    background: #f7f8fa;
+    height: calc(100vh - 44px);
+}
+
+.list-body,.scroll-body {
+    position: relative;
+    width: 100%;
+}
+
+.list-body {
+    height: 100%;
+}
+
+.empty-box {
+    color: #aaa;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.empty-icon {
+    display: block;
+    height: 170rpx;
+    width: 212rpx;
+}
+
+.btn-list {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}

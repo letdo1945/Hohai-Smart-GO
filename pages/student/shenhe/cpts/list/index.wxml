@@ -1,0 +1,19 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="{{type==0&&list.length?'calc(100% - 44px)':'100%'}}" isEmpty="{{!list.length}}" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view bindtap="onDetial" class="card" data-item="{{item}}" wx:for="{{list}}" wx:key="id">
+                <view class="title">
+                    <van-checkbox catchtap="onCheckClick" checkedColor="#1890ff" data-index="{{index}}" iconSize="34rpx" value="{{item.checked}}" wx:if="{{type==0}}"> {{item.applicantName}}发起的申请 </van-checkbox>
+                    <view wx:else> {{item.applicantName}}发起的申请 </view>
+                </view>
+                <view class="row">{{item.createTime}}</view>
+                <view class="context row">申请进出时间：{{item.startTime}}</view>
+            </view>
+        </view>
+    </van-scroll>
+</view>
+<view class="btn-list" wx:if="{{type==0&&list.length}}">
+    <van-button bind:click="onSelectAll" customStyle="width:33.3%" data-value="{{list}}" type="info">全选</van-button>
+    <van-button bind:click="btn_act" customStyle="width:33.3%" data-value="{{0}}" type="primary">批量通过</van-button>
+    <van-button bind:click="btn_act" customStyle="width:33.3%" data-value="{{9}}" type="danger">批量拒绝</van-button>
+</view>

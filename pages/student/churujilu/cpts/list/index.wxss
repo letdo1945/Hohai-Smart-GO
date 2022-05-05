@@ -1,0 +1,5 @@
+.scroll-body {
+    height: calc(100vh - 44px);
+    position: relative;
+    width: 100%;
+}

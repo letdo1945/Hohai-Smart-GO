@@ -1,0 +1,8 @@
+<van-tabs color="#1890ff">
+    <van-tab title="白名单">
+        <JiLuList bind:user="onSelect" index="{{index}}" type="{{0}}"></JiLuList>
+    </van-tab>
+    <van-tab title="红名单">
+        <JiLuList bind:user="onSelect" index="{{index}}" type="{{1}}"></JiLuList>
+    </van-tab>
+</van-tabs>

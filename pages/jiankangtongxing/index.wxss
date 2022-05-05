@@ -1,0 +1,129 @@
+page {
+    background: #f7f8fa;
+    height: 100vh;
+}
+
+.view-body {
+    height: calc(100vh - 44px);
+    overflow: auto;
+}
+
+.mask,.view-body {
+    position: absolute;
+    width: 100%;
+}
+
+.mask {
+    height: 100vh;
+    top: 0;
+    z-index: 99;
+}
+
+textarea {
+    background: #fff;
+    height: 300rpx;
+    padding: 0 16px 10px;
+    width: calc(100% - 32px);
+}
+
+.rankCard {
+    height: 270rpx;
+}
+
+.list-body>.card,.rankCard {
+    background: #fff;
+    position: relative;
+    width: 100%;
+}
+
+.list-body>.card {
+    border-radius: 32rpx;
+    box-shadow: 0 0 20rpx hsla(0,0%,71%,.4);
+    margin-bottom: 32rpx;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card>.title {
+    padding: 32rpx 32rpx 12rpx;
+}
+
+.card>.card-num {
+    padding: 0 32rpx 8rpx;
+}
+
+.card>.card-num,.card>.phone-num {
+    color: #aaa;
+    font-size: .8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card>.phone-num {
+    padding: 0 32rpx 32rpx;
+}
+
+.card>.close-icon {
+    position: absolute;
+    right: 32rpx;
+    top: 32rpx;
+}
+
+.close-icon:active {
+    opacity: .8;
+}
+
+.add-new {
+    color: #888;
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+}
+
+.add-new:active {
+    background-color: #fafafa;
+}
+
+.rank {
+    float: left;
+    padding-left: 40rpx;
+}
+
+.rank,.steps {
+    color: #07c160;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding-top: 30rpx;
+    text-align: center;
+}
+
+.steps {
+    float: right;
+    padding-right: 40rpx;
+}
+
+.num {
+    font-size: 1.8rem;
+}
+
+.award {
+    background: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-list {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.sizeStyle {
+    font-size: 1.4rem;
+    padding-bottom: 40rpx;
+}

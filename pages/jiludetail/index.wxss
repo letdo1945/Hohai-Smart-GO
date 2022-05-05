@@ -1,0 +1,54 @@
+page {
+    background: #f7f8fa;
+}
+
+.scroll-body {
+    overflow: auto;
+    width: 100%;
+}
+
+.textarea {
+    background: #fff;
+    height: 300rpx;
+    padding: 0 16px 10px;
+    width: calc(100% - 32px);
+}
+
+.list-body {
+    left: 5%;
+    position: relative;
+    width: 90%;
+}
+
+.list-body>.card {
+    background: #fff;
+    border-radius: 32rpx;
+    box-shadow: 0 0 20rpx hsla(0,0%,71%,.4);
+    margin-bottom: 32rpx;
+    position: relative;
+    width: 100%;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card>.title {
+    padding: 32rpx 32rpx 12rpx;
+}
+
+.card>.card-num {
+    padding: 0 32rpx 8rpx;
+}
+
+.card>.card-num,.card>.phone-num {
+    color: #aaa;
+    font-size: .8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card>.phone-num {
+    padding: 0 32rpx 32rpx;
+}
