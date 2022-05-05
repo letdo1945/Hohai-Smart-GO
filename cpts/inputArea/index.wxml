@@ -1,0 +1,7 @@
+<view class="text-area">
+    <textarea focus bind:input="onChange" bindblur="onBlur" style="{{customStyle}}" value="{{text}}" wx:if="{{edit}}"></textarea>
+    <view bindtap="onEdit" class="text" style="{{customStyle}}" wx:elif="{{!!text}}">
+        <view wx:for="{{atext}}" wx:key="index">{{item}}</view>
+    </view>
+    <view bindtap="onEdit" class="text placeholder" style="{{customStyle}}" wx:else>{{placeholder}}</view>
+</view>

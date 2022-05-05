@@ -1,0 +1,4 @@
+<van-cell isLink bindtap="onClick" title="{{label}}" value="{{labelValue||placeholder}}" wx:if="{{label}}"></van-cell>
+<van-popup bindclose="onClose" position="bottom" show="{{visible}}">
+    <van-picker showToolbar bind:cancel="onCancel" bind:confirm="onConfirm" bindchange="onChange" columns="{{columnsData}}" loading="{{loading}}" valueKey="label"></van-picker>
+</van-popup>

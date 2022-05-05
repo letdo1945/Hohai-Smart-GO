@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+        "van-picker": "/miniprogram_npm/@vant/weapp/picker/index"
+    }
+}
