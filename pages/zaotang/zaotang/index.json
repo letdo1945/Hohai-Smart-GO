@@ -1,0 +1,12 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "澡堂预约",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-calendar": "/miniprogram_npm/@vant/weapp/calendar/index"
+    }
+}

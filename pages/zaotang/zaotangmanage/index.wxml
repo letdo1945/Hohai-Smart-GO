@@ -1,0 +1,19 @@
+<view class="view-body">
+    <view class="calendar">
+        <van-calendar bind:select="onSelect" class="calendar" maxDate="{{maxDate}}" minDate="{{minDate}}" poppable="{{false}}" rowHeight="{{48}}" showConfirm="{{false}}" showSubtitle="{{false}}" showTitle="{{false}}"></van-calendar>
+    </view>
+    <van-cell-group title="时间段">
+        <van-cell isLink bindtap="onSelectCell" data-item="{{item}}" title="{{item.sTime}} ~ {{item.eTime}}" value="{{item.num}}/{{item.maxNum}}" wx:for="{{list}}" wx:key="index"></van-cell>
+        <view class="no-data" wx:if="{{!list.length}}">
+            <view class="text"> {{time.text}} <view style="color: #aaa;"> {{loading?'时间段加载中...':'暂无时间段可选'}} </view>
+            </view>
+        </view>
+        <van-button bindtap="onOpen" customStyle="width:50%" type="info">批量开放</van-button>
+        <van-button bindtap="onClose" customStyle="width:50%" type="danger">批量禁用</van-button>
+        <van-button block bindtap="onAddNew" type="primary">新增时间段</van-button>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button block bindtap="onShowList" type="info">澡堂记录</van-button>
+</view>
+<view class="mask" wx:if="{{loading}}"></view>

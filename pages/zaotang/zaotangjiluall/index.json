@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "澡堂申请记录",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "van-scroll": "/cpts/scroll/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index"
+    }
+}

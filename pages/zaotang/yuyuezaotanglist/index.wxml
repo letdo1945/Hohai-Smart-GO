@@ -1,0 +1,5 @@
+<van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="100%" isEmpty="{{!list.length}}" isEnd="{{isEnd}}" loading="{{loading}}">
+    <view class="list-body">
+        <van-cell isLink bindtap="onSelect" data-item="{{item}}" title="{{item.name}}" value="{{item.campusName}}" wx:for="{{list}}" wx:key="index"></van-cell>
+    </view>
+</van-scroll>

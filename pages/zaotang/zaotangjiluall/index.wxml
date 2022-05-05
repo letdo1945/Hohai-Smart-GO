@@ -1,0 +1,15 @@
+<view class="scroll-body">
+    <van-scroll bindloadMore="loadMore" bindonRefresh="onRefresh" height="100%" isEmpty="{{!list.length}}" isEnd="{{isEnd}}" loading="{{loading}}">
+        <view class="list-body">
+            <view bindtap="onShowDetail" class="card" data-item="{{item}}" wx:for="{{list}}" wx:key="index">
+                <view class="title"> {{item.applyUserName}} <view class="status" style="color: #fa8c16" wx:if="{{item.state==0}}">未使用</view>
+                    <view class="status" style="color: #1890ff" wx:if="{{item.state==1}}">正在使用</view>
+                    <view class="status" style="color: #eb2f96" wx:if="{{item.state==2}}">已使用</view>
+                    <view class="status" style="color: #f00" wx:if="{{item.state==3}}">已作废</view>
+                </view>
+                <view class="row"> {{item.userDate}} <view class="time"> {{item.startTime}} - {{item.endTime}} </view>
+                </view>
+            </view>
+        </view>
+    </van-scroll>
+</view>

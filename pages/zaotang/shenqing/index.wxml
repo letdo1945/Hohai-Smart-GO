@@ -1,0 +1,26 @@
+<view wx:if="{{userInfo.type==4}}">
+    <view class="view-body">
+        <van-cell-group title="basic content">
+            <van-cell title="name of bathhouse" value="{{zaotang.name}}"></van-cell>
+            <van-cell title="campus" value="{{zaotang.campusName}}"></van-cell>
+            <van-cell title="appointment period" value="{{time.sTime}} ~ {{time.eTime}}"></van-cell>
+        </van-cell-group>
+    </view>
+    <view class="btn-list">
+        <van-button block bindtap="onSubmit" type="info">submit appointment</van-button>
+    </view>
+    <view class="mask" wx:if="{{showMask}}"></view>
+</view>
+<view wx:else>
+    <view class="view-body">
+        <van-cell-group title="基本内容">
+            <van-cell title="澡堂名称" value="{{zaotang.name}}"></van-cell>
+            <van-cell title="所属校区" value="{{zaotang.campusName}}"></van-cell>
+            <van-cell title="预约时间段" value="{{time.sTime}} ~ {{time.eTime}}"></van-cell>
+        </van-cell-group>
+    </view>
+    <view class="btn-list">
+        <van-button block bindtap="onSubmit" type="info">提交预约</van-button>
+    </view>
+    <view class="mask" wx:if="{{showMask}}"></view>
+</view>

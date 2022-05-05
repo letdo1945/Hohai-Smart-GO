@@ -1,0 +1,16 @@
+<view class="view-body">
+    <van-cell-group title="基本内容">
+        <van-cell isLink bindtap="onShowTimePicker" data-tag="0" title="开始时间" value="{{startTime||'选择时间'}}"></van-cell>
+        <van-cell isLink bindtap="onShowTimePicker" data-tag="1" title="终止时间" value="{{endTime||'选择时间'}}"></van-cell>
+        <van-field bind:change="onNumChange" inputAlign="right" label="人数上限" placeholder="请输入人数上限" value="{{num}}"></van-field>
+        <van-field bind:change="onHoldNumChange" inputAlign="right" label="可容纳人数" placeholder="请输入可容纳人数" value="{{holdNum}}"></van-field>
+        <van-popup customStyle="height: 240px;" position="bottom" show="{{selectTimeShow}}">
+            <van-datetime-picker bindcancel="onHideTimePicker" bindconfirm="onSelectTimeOk" itemHeight="38" type="time" value="{{currentDate}}"></van-datetime-picker>
+        </van-popup>
+    </van-cell-group>
+</view>
+<view class="btn-list">
+    <van-button bindtap="onSubmit" customStyle="width:50%" type="info">更新</van-button>
+    <van-button bindtap="onForbid" customStyle="width:50%" type="danger">删除</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>

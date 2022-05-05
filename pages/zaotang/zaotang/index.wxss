@@ -1,0 +1,49 @@
+page {
+    background: #f7f8fa;
+    height: 100vh;
+}
+
+.view-body {
+    height: calc(100vh - 44px);
+    overflow: auto;
+}
+
+.btn-list,.view-body {
+    position: absolute;
+    width: 100%;
+}
+
+.btn-list {
+    bottom: 0;
+}
+
+.mask {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.calendar {
+    height: 50vh;
+    padding-bottom: 32rpx;
+}
+
+.calendar,.no-data {
+    background-color: #fff;
+}
+
+.no-data {
+    height: 700rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.no-data>.text {
+    color: #444;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}

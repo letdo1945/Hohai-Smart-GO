@@ -1,0 +1,12 @@
+<view class="view-body">
+    <van-cell-group title="基本内容">
+        <van-cell title="澡堂名称" value="{{data.bathHouseName}}"></van-cell>
+        <van-cell title="申请人" value="{{data.applyUserName}}"></van-cell>
+        <van-cell title="预约日期" value="{{data.userDate}}"></van-cell>
+        <van-cell title="预约时间段" value="{{data.startTime}} ~ {{data.endTime}}"></van-cell>
+    </van-cell-group>
+</view>
+<view class="btn-list" wx:if="{{data.state==0}}">
+    <van-button block bindtap="onSubmit" type="info">取消预约</van-button>
+</view>
+<view class="mask" wx:if="{{showMask}}"></view>
