@@ -4,4 +4,4 @@
 
 用于微信开发者工具https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
 
-反编译工具基于mp-unpack
+反编译工具mp-unpack
